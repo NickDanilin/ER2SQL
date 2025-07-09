@@ -51,8 +51,7 @@ ER2SQL-WEB/
 │   ├── index.html
 │   ├── package.json
 │   ├── package-lock.json
-│   └── vite.config.js
-└── .gitignore
+└── └── vite.config.js
 
 ```
 
