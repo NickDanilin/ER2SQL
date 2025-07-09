@@ -17,22 +17,43 @@
 
 ## Структура проекта
 ```
-er2sql-web/
-├─ backend/ # FastAPI + Python-валидации
-│ ├─ app/
-│ │ ├─ converters/ # парсеры ER-диаграмм → SQL ← часть выполнена Белявской Ариной
-│ │ ├─ validator/ # SQLFluff, SQLite, AST, LLM
-│ │ ├─ schemas.py # Pydantic-модели
-│ │ └─ main.py # точка входа FastAPI
-│ ├─ requirements.txt
-│ └─ venv/ # виртуальное окружение (необязательно)
-└─ frontend/ # React + Vite
-├─ index.html
-├─ package.json
-├─ vite.config.js
-└─ src/
-├─ App.jsx
-└─ App.css
+ER2SQL-WEB/
+├── backend/
+│   ├── app/
+│   │   ├── converters/
+│   │   │   ├── __init__.py
+│   │   │   ├── erd_converter.py
+│   │   │   ├── graphml_converter.py
+│   │   │   └── xml_converter.py
+│   │   ├── validator/
+│   │   │   ├── __init__.py
+│   │   │   ├── ast_checks.py
+│   │   │   ├── download_model.py
+│   │   │   └── validator.py
+│   │   ├── config.py
+│   │   ├── main.py
+│   │   └── schemas.py
+│   ├── models/
+│   ├── tests/
+│   │   ├── test_erd_converter.py
+│   │   ├── test_graphml_converter.py
+│   │   ├── test_xml_converter.py
+│   │   └── run_tests.py
+│   ├── pytest.ini
+│   ├── requirements.txt
+│   └── venv/
+├── frontend/
+│   ├── node_modules/
+│   ├── src/
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
+└── .gitignore
+
 ```
 
 Конвертер ERD/GraphML/XML → SQL разработан **Белявской Ариной**.
