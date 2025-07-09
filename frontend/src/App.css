@@ -1,0 +1,157 @@
+:root {
+  --primary-color: #2ab67a;
+  --bg-light: #f7f9fc;
+  --bg-panel: #ffffff;
+  --text-default: #333333;
+  --border-radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --gap: 16px;
+  --padding: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-default);
+}
+
+.container {
+  max-width: 800px;
+  margin: var(--padding) auto;
+  padding: 0 var(--padding);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: var(--gap);
+  color: var(--primary-color);
+}
+
+.uploader {
+  display: flex;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+.uploader input[type="file"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background: #fff;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1e9260;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: var(--text-default);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #cbd5e1;
+}
+
+.error {
+  background: #ffe6e6;
+  border-left: 4px solid #d32f2f;
+  padding: var(--gap);
+  margin-bottom: var(--gap);
+  color: #d32f2f;
+}
+
+.panel {
+  background: var(--bg-panel);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  margin-top: var(--gap);
+}
+
+.panel h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.panel h3 {
+  margin-bottom: 0.5em;
+  color: var(--text-default);
+}
+
+/* общий стиль для всех pre */
+
+.panel textarea,
+.panel pre {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: monospace;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  resize: vertical;
+}
+
+.panel pre {
+  background: #f0f4f8;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--text-default);
+}
+
+/* убираем светло-серый для списков, но они уже не используются */
+.panel ul,
+.panel ul li {
+  color: var(--text-default) !important;
+}
+
+.download-bar {
+  display: flex;
+  gap: var(--gap);
+  margin-top: var(--gap);
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--primary-color);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
