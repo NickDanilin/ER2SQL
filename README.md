@@ -16,6 +16,7 @@
 ---
 
 ## Структура проекта
+```
 er2sql-web/
 ├─ backend/ # FastAPI + Python-валидации
 │ ├─ app/
@@ -32,6 +33,7 @@ er2sql-web/
 └─ src/
 ├─ App.jsx
 └─ App.css
+```
 
 Конвертер ERD/GraphML/XML → SQL разработан **Белявской Ариной**.
 
